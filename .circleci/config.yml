@@ -18,13 +18,13 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-      - add_ssh_key:
+      - add_ssh_keys:
         fingerprints: ["3b:93:49:cb:d9:30:c9:9d:02:1a:d2:e9:69:08:90:fe"]
-      run:
+      - run:
         name: install ansible
         command: |
           apk add --update ansible
-      run:
+      - run:
         name: Run Playbook
         command: |  
           ansible-playbook -i inventory.txt main.yml
