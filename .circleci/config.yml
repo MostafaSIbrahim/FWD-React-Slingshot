@@ -21,13 +21,13 @@ jobs:
       - add_ssh_keys:
           fingerprints: ["3b:93:49:cb:d9:30:c9:9d:02:1a:d2:e9:69:08:90:fe"]
       - run:
-        name: install ansible
-        command: |
-          apk add --update ansible
+          name: install ansible
+          command: |
+            apk add --update ansible
       - run:
-        name: Run Playbook
-        command: |  
-          ansible-playbook -i inventory.txt main.yml
+          name: Run Playbook
+          command: |  
+            ansible-playbook -i inventory.txt main.yml
 
 workflows:
   exworkflow:
